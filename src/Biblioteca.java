@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Biblioteca {
 
-	private List<Llibre> llibres;
+	private List<Libro> libros;
 
 	/***
 	 	o Afegir llibre a la biblioteca.
@@ -14,30 +14,40 @@ public class Biblioteca {
 	 */
 	
 	public Biblioteca(){
-		this.llibres = new ArrayList<>();
+		this.libros = new ArrayList<>();
 	}
 
-	public void afegirLlibre(Llibre llibre){
-		llibres.add(llibre);
+	public void agregarLibro(Libro libro){
+		libros.add(libro);
 	}
 	
 	// Buscar normal
-    public Llibre buscarLlibre(String titol){
-        for (Llibre llibre : llibres){
-            if (llibre.getTitol().equalsIgnoreCase(titol)) {
-                return llibre;
+	/**
+	 * 
+	 * @param titol
+	 * @return
+	 */
+    public Libro buscarLlibre(String titol){
+        for (Libro libro : libros){
+            if (libro.getTitol().equalsIgnoreCase(titol)) {
+                return libro;
             }
         }
         return null;
     }
 
     // Buscar ignorando tildes :D
-    public Llibre buscarLlibreSinAcentos(String titol){
-        String titolNormalitzat = normalitzar(titol);
+    /**
+     * 
+     * @param titol
+     * @return
+     */
+    public Libro buscarLlibreSinAcentos(String titol){
+        String titolNormalitzat = normalizar(titol);
 
-        for (Llibre llibre : llibres){
-            if (normalitzar(llibre.getTitol()).equals(titolNormalitzat)) {
-                return llibre;
+        for (Libro libro : libros){
+            if (normalizar(libro.getTitol()).equals(titolNormalitzat)) {
+                return libro;
             }
         }
         return null;
@@ -48,21 +58,26 @@ public class Biblioteca {
     }
     
     // metodo auxiliar que normaliza el texto :D
-    private String normalitzar(String text){
+    /**
+     * 
+     * @param text
+     * @return
+     */
+    private String normalizar(String text){
         return Normalizer.normalize(text, Normalizer.Form.NFD)
                 .replaceAll("[\\p{InCombiningDiacriticalMarks}]", "")
                 .toLowerCase();
     }
 
     // mostrar lista de libros :D
-    public void llistarLlibres(){
-        for (Llibre llibre : llibres){
-            System.out.println(llibre);
+    public void listarLibros(){
+        for (Libro libro : libros){
+            System.out.println(libro);
         }
     }
     
-    public List<Llibre> getLlibres(){ 
-        return llibres; 
+    public List<Libro> getLibros(){      
+        return libros; 
     }
 
 }
