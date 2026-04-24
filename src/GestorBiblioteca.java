@@ -4,21 +4,30 @@ import java.util.List;
 
 public class GestorBiblioteca {
 
-    private List<Prestamo> prestamos;
+	private List<Prestamo> prestamos;
 
-    public GestorBiblioteca(){
-        this.prestamos = new ArrayList<>();
-    }
+	public GestorBiblioteca(){
+		this.prestamos = new ArrayList<>();
+	}
 
-    public void prestarLlibre(Usuario usuario, Libro libro) {
+	public void prestarLlibre(Usuario usuario, Libro libro) {
 
-        libro.prestar();
+		libro.prestar();
 
-        Prestamo prestamo = new Prestamo(usuario, libro, LocalDate.now());
-        prestamos.add(prestamo);
+		Prestamo prestamo = new Prestamo(usuario, libro, LocalDate.now());
+		prestamos.add(prestamo);
 
-        usuario.agregarLibro(libro);
+		usuario.agregarLibro(libro);
 
-        System.out.println(usuario.getNom() + " ha agafat el llibre: " + libro.getTitol());
-    }
+		System.out.println(usuario.getNom() + " ha agafat el llibre: " + libro.getTitol());
+		
+		// controlador de limite de libros para el usuario
+		if (!usuario.potAgafarLlibre()) {
+			System.out.println("L'usuari ha arribat al límit de llibres.");
+			return;
+		}
+		
+	}
+
+
 }
