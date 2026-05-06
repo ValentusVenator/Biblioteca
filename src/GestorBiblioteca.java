@@ -17,7 +17,7 @@ public class GestorBiblioteca {
 		Prestamo prestamo = new Prestamo(usuario, libro, LocalDate.now());
 		prestamos.add(prestamo);
 
-		usuario.agregarLibro(libro);
+		usuario.afegirLlibre(libro);
 
 		System.out.println(usuario.getNom() + " ha agafat el llibre: " + libro.getTitol());
 		
