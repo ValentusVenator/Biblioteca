@@ -47,6 +47,13 @@ public class Usuario {
 		return "El usuario se llama: " + this.nombre;
 	}
 	
+	
+	/**
+	 * Funcion para saber si un usuario puede pedir prestado un libro o no
+	 * 
+	 * @return Un boolean que es true si ha pedido prestado menos de 10 libros,
+	 * y que devuelve false si ha pedido 10 o más.
+	 */
 	public boolean puedeAnadirLibro() {
 		if(this.librosPrestados.size()>=10) {
 			return false;

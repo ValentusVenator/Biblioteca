@@ -6,8 +6,8 @@ public class Biblioteca {
 
 	private List<Libro> libros;
 
-	/***
-	 	o Afegir llibre a la biblioteca.
+	/**
+	 * o Afegir llibre a la biblioteca.
 		o Buscar llibre a la biblioteca.
 		o Buscar llibre a la biblioteca ignorant els accents.
 		o Llistar llibres.
@@ -69,14 +69,20 @@ public class Biblioteca {
                 .toLowerCase();
     }
 
-    // mostrar lista de libros :D
+    /**
+     *  mostrar lista de libros :D
+     */
     public void listarLibros(){
         for (Libro libro : libros){
             System.out.println(libro);
         }
     }
     
-    //agregar libro unico no repetidos
+    /**
+     * agregar libro unico no repetidos
+     * @param libro
+     * @return
+     */
     public boolean agregarLibroUnico(Libro libro){
 	    if (buscarLibroSinAcentos(libro.getTitulo()) != null){
 	        return false;

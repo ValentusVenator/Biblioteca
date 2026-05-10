@@ -13,7 +13,12 @@ public class Libro {
 		this.prestado = false;
 	}
 
-	
+	/**
+	 * Función que permite editar las características del libro fácilmente
+	 * 
+	 * @param titulo El titulo del libro
+	 * @param autor El autor del libro
+	 */
 	public void modificarLibro(String titulo, String autor) {
 		this.titulo = titulo;
 		this.autor = autor;
