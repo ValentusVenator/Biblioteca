@@ -1,4 +1,3 @@
-package biblioteca;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +42,7 @@ public class Biblioteca {
      * @param titol
      * @return
      */
-    public Libro buscarLlibreSinAcentos(String titol){
+    public Libro buscarLibroSinAcentos(String titol){
         String titolNormalitzat = normalizar(titol);
 
         for (Libro libro : libros){
@@ -54,8 +53,8 @@ public class Biblioteca {
         return null;
     }
     
-    public boolean existeixLlibre(String titol){
-        return buscarLlibreSinAcentos(titol) != null;
+    public boolean existeLibro(String titol){
+        return buscarLibroSinAcentos(titol) != null;
     }
     
     // metodo auxiliar que normaliza el texto :D
@@ -76,6 +75,15 @@ public class Biblioteca {
             System.out.println(libro);
         }
     }
+    
+    //agregar libro unico no repetidos
+    public boolean agregarLibroUnico(Libro libro){
+	    if (buscarLibroSinAcentos(libro.getTitulo()) != null){
+	        return false;
+	    }
+	    libros.add(libro);
+	    return true;
+	}
     
     public List<Libro> getLibros(){      
         return libros; 
