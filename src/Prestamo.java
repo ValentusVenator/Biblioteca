@@ -67,4 +67,5 @@ public class Prestamo  {
 	public void setListaLibro(Libro[] listaLibro) {
 		this.listaLibro = listaLibro;
 	}
+
 }
