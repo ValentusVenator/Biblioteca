@@ -17,6 +17,13 @@ public class GestorBiblioteca {
 	    }
 	}
 
+	/**
+	 * Funcion que permite a un usuario que preste un libro
+	 * 
+	 * 
+	 * @param usuario Nombre del usuario
+	 * @param libro Nombre del libro
+	 */
 	public void prestarLlibre(Usuario usuario, Libro libro) {
 
 		libro.prestar();
