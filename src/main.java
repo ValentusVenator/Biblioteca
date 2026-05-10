@@ -1,6 +1,5 @@
-package biblioteca;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         Biblioteca biblioteca = new Biblioteca();
         Libro llibre1 = new Libro("1984", "George Orwell");
