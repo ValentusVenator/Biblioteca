@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 public class Libro {
 
 	private String titulo;
 	private String autor;
 	private boolean prestado;
+	
 
 	public Libro(String titulo, String autor) {
 		this.titulo = titulo;
@@ -10,8 +13,15 @@ public class Libro {
 		this.prestado = false;
 	}
 
+	
+	public void modificarLibro(String titulo, String autor) {
+		this.titulo = titulo;
+		this.autor = autor;
+	}
+	
+	
 	public void borrarLibro(Libro libro) {
-		
+		libro = null;
 	}
 	public void prestar() {
 		prestado = true;
@@ -32,7 +42,6 @@ public class Libro {
 	public boolean isPrestado() {
 		return prestado;
 	}
-
 
 	public void setPrestado(boolean prestado) {
 		this.prestado = prestado;
